@@ -1,0 +1,3 @@
+@use "node_modules/accoutrement/sass/plugin";
+
+@include plugin.global-box-sizing();

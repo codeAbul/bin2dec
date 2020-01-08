@@ -1,0 +1,19 @@
+$colors: (
+        heading: hsl(240, 100%, 50%),
+        border: hsl(302, 58%, 36%),
+        input-bg:hsl(65, 100%, 85%),
+        text: "#border"
+);
+
+$breakpoints: (
+        x-small:30em,
+        small: 37.5em,
+        medium: 48em,
+        large: 56.25em,
+        x-large: 68.75em,
+        xx-large: 81.25em
+);
+
+$sizes: (
+      border: 0.5em
+)
