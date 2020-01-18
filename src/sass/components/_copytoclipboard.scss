@@ -1,0 +1,22 @@
+@use "../utils";
+
+
+.copy-to-clipboard{
+  --fill: hsla(300, 23%, 3%, 0.49);
+  transition: all ease-in 0.1s;
+  --width: utils.$clipboard-icon-width;
+  width: var(--width);
+  grid-column: clipboard-start/clipboard-end;
+  grid-row:1;
+  align-self: center;
+  margin-right: 0.5em;
+
+  .container-path{
+    fill: var(--fill);
+  }
+
+  &:hover{
+    transform: scale(1.1);
+    --fill: #00f;
+  }
+}

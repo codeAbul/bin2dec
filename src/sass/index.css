@@ -1,11 +1,10 @@
 /* Error: Can't find stylesheet to import.
  *   ,
- * 1 | @use 'node_modules/accoutrement/sass/tools';
- *   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ * 1 | @use "node_modules/accoutrement/sass/plugin/layout";
+ *   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  *   '
- *   utils/_variables.scss 1:1  @forward
- *   utils/_index.scss 1:1      @use
- *   index.scss 1:1             root stylesheet */
+ *   init/_index.scss 1:1  @use
+ *   index.scss 2:1        root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -15,5 +14,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use 'node_modules/accoutrement/sass/tools';\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   utils/_variables.scss 1:1  @forward\a   utils/_index.scss 1:1      @use\a   index.scss 1:1             root stylesheet";
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use \"node_modules/accoutrement/sass/plugin/layout\";\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   init/_index.scss 1:1  @use\a   index.scss 2:1        root stylesheet";
 }

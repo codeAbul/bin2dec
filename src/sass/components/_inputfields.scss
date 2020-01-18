@@ -1,0 +1,24 @@
+@use "../utils";
+// Input Container
+
+[data-input]{
+  display: grid;
+  input{
+    grid-column: input-start/input-end;
+    grid-row:1;
+  }
+
+  .input-container{
+    display:grid;
+    grid-template-columns:
+            [input-start] 1fr [clipboard-start] 2em[clipboard-end input-end] ;
+  }
+}
+
+[data-input = "binary"]{
+  justify-self: end;
+}
+
+[data-input = "decimal"]{
+  justify-self: start;
+}

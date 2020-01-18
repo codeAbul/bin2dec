@@ -1,0 +1,24 @@
+@use "../utils";
+
+.two-sided-arrow{
+  // 0 stands for a vertical arrow and 1 for a horizontal
+  --svg-orientation: 0;
+  margin-top: var(--arrow-shim);
+  width: var(--arrow-width);
+  transform: rotate( calc(var(--svg-orientation)*90deg));
+
+
+  @media screen and (min-width: 43.75em) {
+    // make it horizontal when the screen is of sufficient size
+    --svg-orientation: 1;
+    height:var(--arrow-width);
+    margin-top: 2em;
+
+  }
+
+
+  @include utils.above("large") {
+    margin-top: 5em;
+
+  }
+}

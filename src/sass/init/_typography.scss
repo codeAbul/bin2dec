@@ -1,14 +1,161 @@
-/*
-*/
+
+
+
 
 @font-face {
-  src: url("public/assets/fonts/KappaVol2D-Black.woff") format("woff");
-  font-family: "Kappa Vol2 D Black";
+  src:url("/assets/fonts/KappaVol2D-Black.woff") format("woff");;
+  font-family: "Kappa Vol2 D";
   font-display: swap;
+  font-style: normal;
+  font-weight: bold;
 }
 
 @font-face {
-  src: url("public/assets/fonts/KappaVol2D-Regular.woff") format("woff");
-  font-family: "Kappa Vol2 D Regular";
+  src: url("/assets/fonts/KappaVol2D-Regular.woff") format("woff");
+  font-family: "Kappa Vol2 D";
+  font-style:normal;
+  font-weight:normal;
   font-display: swap;
 }
+
+
+
+
+:root {
+
+  /* Breakpoint variables */
+  --bp-small: 24.15;
+  --bp-medium: 43.75;
+  --bp-large: 60.25;
+  --bp-xlarge: 75;
+
+  /* Paragraph variables */
+  --p-line-height-min: 1.15;
+  --p-line-height-max: 1.5;
+  --p-font-size-min: 1.8;
+  --p-font-size-max: 3.5;
+
+
+  /* H1 variables */
+  --h1-line-height-min: 1.05;
+  --h1-line-height-max: 1.1;
+  --h1-font-size-min: 3;
+  --h1-font-size-max: 5;
+
+}
+
+
+
+
+body,
+div,
+p,
+th,
+td,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+figcaption,
+cite,
+i,
+em,
+b,
+strong,
+button,
+p:first-line,
+p:first-letter,label {
+  font-family: "Kappa Vol2 D", "Fira Sans", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+p {
+  --text-ital: 0;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 38rem;
+  transition: all linear 0.2s;
+  hyphens: auto;
+}
+
+/* Variations and variables */
+p,label {
+  font-size: calc(var(--p-font-size-min) * 1rem);
+  line-height: var(--p-line-height-min);
+
+
+  @media screen and (min-width: 24.15em) {
+    line-height: calc((var(--p-line-height-min) * 1em) + (var(--p-line-height-max) - var(--p-line-height-min)) * ((100vw - (var(--bp-small) * 1em)) / (var(--bp-large) - var(--bp-small))));
+  }
+
+  @media (min-width: 60.25em) {
+    font-size: calc((var(--p-font-size-min) * 1em) + (var(--p-font-size-max) - var(--p-font-size-min)) * ((100vw - (var(--bp-large) * 1em)) / (var(--bp-xlarge) - var(--bp-large))));
+    line-height: var(--p-line-height-max);
+  }
+
+  @media (min-width: 75em) {
+    font-size: calc(var(--p-font-size-max) * 1em);
+    max-width: 42rem;
+  }
+}
+
+input {
+  font-size: calc(var(--p-font-size-min) * 1rem*0.6);
+  line-height: var(--p-line-height-min);
+
+  @media screen and (min-width: 24.15em) {
+    line-height: calc((var(--p-line-height-min) * 1em) + (var(--p-line-height-max) - var(--p-line-height-min)) * ((100vw - (var(--bp-small) * 1em)) / (var(--bp-large) - var(--bp-small))));
+  }
+
+  @media (min-width: 60.25em) {
+    font-size: calc((var(--p-font-size-min) * 1em) + (var(--p-font-size-max) - var(--p-font-size-min)) * ((100vw - (var(--bp-large) * 1em)) / (var(--bp-xlarge) - var(--bp-large)))*0.6);
+    line-height: var(--p-line-height-max);
+  }
+
+  @media (min-width: 75em) {
+    font-size: calc(var(--p-font-size-max) * 1em*0.6);
+    max-width: 42rem;
+  }
+
+}
+
+
+
+header {
+  font-family: "Kappa Vol2 D",sans-serif;
+  font-weight: bold;
+  transition: all linear 0.2s;
+  font-size: calc(var(--h1-font-size-min) * 1em);
+  line-height: var(--h1-line-height-min);
+  margin: 1rem auto;
+  max-width: 50rem;
+
+  @media screen and (min-width: 24.15em) {
+    line-height: calc((var(--h1-line-height-min) * 1em) + (var(--h1-line-height-max) - var(--h1-line-height-min)) * ((100vw - (var(--bp-small) * 1em)) / (var(--bp-xlarge) - var(--bp-small))));
+  }
+
+  @media screen and (min-width: 43.75em) {
+    max-width: 60rem;
+  }
+
+  @media screen and (min-width: 60.25em) {
+    line-height: var(--h1-line-height-max);
+    max-width: 70rem;
+  }
+
+  @media (min-width: 75em) {
+    font-size: calc(var(--h1-font-size-max) * 1em);
+    line-height: var(--h1-line-height-max);
+    max-width: 75rem;
+  }
+}
+
+
+
+

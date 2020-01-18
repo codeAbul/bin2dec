@@ -6,14 +6,15 @@ $colors: (
 );
 
 $breakpoints: (
-        x-small:30em,
-        small: 37.5em,
-        medium: 48em,
-        large: 56.25em,
-        x-large: 68.75em,
-        xx-large: 81.25em
+        'small': 24.15em,
+        'medium': 43.75em,
+        'large': 60.25em,
+        'x-large':75em
 );
 
 $sizes: (
       border: 0.5em
-)
+);
+
+$clipboard-icon-width:0.8em;
+$two-sided-arrow-width:28.53px;

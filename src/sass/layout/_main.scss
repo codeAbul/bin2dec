@@ -1,0 +1,36 @@
+@use "../utils";
+
+main {
+  grid-row: 2;
+  --grid-template-columns: fit-content(300px);
+  display: grid;
+  --main-grid-gap: 0.25em;
+  --arrow-shim: var(--main-grid-gap)*-1;
+  gap: var(--main-grid-gap);
+  --arrow-width: 2em;
+  grid-template-columns: var(--grid-template-columns);
+  grid-template-rows: 200px var(--arrow-width) 200px;
+  place-content: center;
+  place-items: center;
+
+  @include utils.above("medium") {
+    --input-width: minmax(15em,20em);
+    --arrow-width: 6em;
+    --grid-template-columns: [binary-start] var(--input-width) [binary-end
+      arrow-start] var(--arrow-width) [arrow-end decimal-start]var(--input-width)
+      [decimal-end];
+    grid-template-rows: none;
+
+  }
+
+  @include utils.above("large") {
+    --input-width: minmax(20em,25em);
+
+  }
+}
+
+
+@supports (display: subgrid) {
+
+
+}

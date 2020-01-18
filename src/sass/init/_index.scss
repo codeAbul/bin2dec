@@ -1,3 +1,56 @@
-@use "node_modules/accoutrement/sass/plugin";
 
-@include plugin.global-box-sizing();
+@forward "typography";
+@use "../utils";
+@use 'sass:map';
+@use "node_modules/accoutrement/sass/plugin/layout";
+@include layout.global-box-sizing();
+
+$bg-image-url: "/assets/images/bg-image.svg";
+$colors: utils.$colors;
+
+#root {
+  --svg-orientation:"horizontal";
+  min-height:100vh;
+  --grid-template-rows: fit-content(200px) fit-content(30em);
+  background-image: url($bg-image-url);
+  background-size: cover;
+  display: grid;
+  grid-template-rows: var(--grid-template-rows);
+}
+
+
+img {
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+}
+
+
+input {
+  --border-size: 0.2em;
+  --background-color: #{map.get($colors, input-bg)};
+  border: var(--border-size) solid map.get($colors, border);
+  background-color: var(--background-color);
+  padding:1em;
+  caret-color:map.get($colors, border);
+  min-width:250px;
+
+
+  &:focus,
+  &:active,
+  &:hover {
+    --background-color: white;
+    outline: 2px solid darkgreen;
+    border: none;
+  }
+
+  &:focus,
+  &:active{
+    box-shadow: 10px 10px 0px 0px hsla(227, 61%, 62%, 0.51);
+  }
+}
+
+label{
+  margin-right: 0.5em;
+}
+
