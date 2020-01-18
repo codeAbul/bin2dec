@@ -1,24 +1,29 @@
 @use "../utils";
 // Input Container
 
-[data-input]{
+[data-input] {
   display: grid;
-  input{
+  input {
     grid-column: input-start/input-end;
-    grid-row:1;
+    grid-row: 1;
   }
 
-  .input-container{
-    display:grid;
-    grid-template-columns:
-            [input-start] 1fr [clipboard-start] 2em[clipboard-end input-end] ;
+  .input-container {
+    display: grid;
+    grid-template-columns: [input-start] 1fr [clipboard-start] 2em[clipboard-end input-end];
   }
 }
 
-[data-input = "binary"]{
+[data-input="binary"] {
   justify-self: end;
 }
 
-[data-input = "decimal"]{
+[data-input="decimal"] {
   justify-self: start;
+}
+
+@include utils.below("medium"){
+  [data-input = "binary"]{
+    margin-bottom: 1em;
+  }
 }

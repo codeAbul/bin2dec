@@ -6,3 +6,9 @@
     @content
   }
 }
+
+@mixin below($str) {
+  @media screen and (max-width : #{map.get(variables.$breakpoints, $str)}){
+    @content
+  }
+}
